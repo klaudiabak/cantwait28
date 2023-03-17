@@ -5,6 +5,13 @@ buildscript {
         mavenCentral()
     }
 
+    plugins {
+        apply plugin: 'com.android.application'  
+
+  // Add the Google services Gradle plugin
+        id 'com.google.gms.google-services'
+  
+}
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0'
         // START: FlutterFire Configuration
@@ -31,13 +38,7 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-plugins {
-  id 'com.android.application'
 
-  // Add the Google services Gradle plugin
-  id 'com.google.gms.google-services'
-  
-}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
